@@ -14,10 +14,12 @@ export default defineConfig({
       fileName: () => "common-ui.umd.js",
     },
     rollupOptions: {
-      // Vue는 페이지에서 CDN으로 제공되므로 번들에서 제외 (번들 용량 최소화)
+      // Vue는 페이지에서 별도 스크립트로 제공 → 번들 제외 (캐시 분리 효과)
       external: ["vue"],
       output: {
         globals: { vue: "Vue" },
+        // named + default export 혼용 경고 억제
+        exports: 'named',
       },
     },
     // 빌드 결과물을 WEB 프로젝트의 static/common-ui 폴더로 직접 출력
