@@ -1,0 +1,16 @@
+# 1. 패키지 의존성 (용량이 매우 크므로 커밋 제외)
+node_modules/
+
+# 2. 빌드 결과물 (Vite 빌드 시 자동 생성되므로 제외)
+dist/
+dist-ssr/
+
+# 3. 로컬 환경 변수 (보안 민감 정보 포함 가능성)
+*.local
+.env.local
+.env.*.local
+
+# 4. IDE 및 OS 환경 파일 (개인별 개발 환경 종속 방지)
+.idea/
+.vscode/
+.DS_Store
